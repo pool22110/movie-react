@@ -76,7 +76,7 @@
     
     color: rgb(83, 83, 136);
     font-size: larger;
-    background-color: pink;
+    background-color: rgb(192, 240, 255);
     border-color: black;
 }
 
@@ -97,7 +97,7 @@ hr.style-seven {
 
 .response-container{
     outline: 1px solid black;
-    background-color: rgb(246, 222, 226);
+    background-color: rgb(222, 232, 246);
     margin-top: 20px;
     border-radius: 20px;
 }

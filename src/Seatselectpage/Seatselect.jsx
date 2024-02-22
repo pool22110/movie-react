@@ -1,12 +1,15 @@
 import axios from "axios";
-import Navbar from "../componants/Navbar/navbar";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import React from "react";
 import './seatselect.css'
+import Navbar from "../componants/Navbar/Menubar";
+import { Button } from 'primereact/button';
+
 
 const Seatselect = () => {
   const { theatername } = useParams();
+  const { theaterid } = useParams();
 
   const [reservedseats, setReservedseat] = useState([]);
   const [emptyseats, setEmptyseat] = useState([]);
@@ -67,10 +70,10 @@ const Seatselect = () => {
     }
   };
 
-  const handlebookticket = async (theatername, seat) => {
-    console.log(theaterId);
+  const handlebookticket = async (theaterid, seat) => {
+    console.log(theaterid);
     const Data = {
-      theater: theaterId,
+      theater: theaterid,
       user: userdetails,
       total_price: seat.length * 120,
       seats: seat.join(),
@@ -97,7 +100,8 @@ const Seatselect = () => {
       <Navbar />
 
       <h1>{theatername}</h1>
-      <h2>Pre Ticket price is 150 is it working{userdetails}</h2>
+      {/* <h1>{theaterid}</h1> */}
+      <h2>Ticket price is 150 </h2>
 
       <center>
         <div className="container">
@@ -135,7 +139,7 @@ const Seatselect = () => {
 
       <center>
             <button
-              onClick={() => handlebookticket(theatername, selectedseats)}
+              onClick={() => handlebookticket(theaterid, selectedseats)}
               className={`book-btn ${
                 selectedseats.length < 1 ? "disabled" : ""
               }`}

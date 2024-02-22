@@ -16,6 +16,9 @@ import Homepage from "./landingpage/homepg/Homepg";
 import Moviedetails from "./Moviedetailpage/moviedetails/moviedetails";
 import TheaterSelect from "./theaterpage/TheaterSelect";
 import Seatselect from "./Seatselectpage/Seatselect";
+import DropdownBar from "./componants/searchbar/searchbar";
+import Moviepage from "./moviespage/moviepage";
+import Summary from "./Summarypage/Summary";
 
 function App() {
   return (
@@ -28,7 +31,11 @@ function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/movie/:id' element={<Moviedetails/>}></Route>
         <Route path='/theater/:id' element={<TheaterSelect/>}></Route>
-        <Route path="/booking/:theatername" element={<Seatselect/>} />
+        <Route path="/booking/:theatername/:theaterid" element={<Seatselect/>} />
+        <Route path="/allmovie" element={<Moviepage/>}></Route>
+        <Route path="/moviepg" element={<DropdownBar/>}></Route>
+        <Route path="/summary" element={<Summary/>}></Route>  
+        
 
         
 

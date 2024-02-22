@@ -1,18 +1,14 @@
-import styles from "./home.module.css" 
-import axios from "axios";
-// import Navbar from "../../componants/Navbar/navbar";
-import Navbar from "../../componants/Navbar/Menubar";
-import MovieCard from "../moviecard/moviecard";
-import { Banner } from "../banner/banner";
+
 import { useEffect, useState} from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
-import DropdownBar from "../../componants/searchbar/searchbar";
+import Navbar from "../componants/Navbar/Menubar";
+import MovieCard from "../landingpage/moviecard/moviecard";
+import styles from "./moviepage.module.css"
 
 
 
-
-export default function Homepage() {
-
+function Moviepage() {
     const [movies,setmovies] = useState([]);
 
     useEffect(()=>{
@@ -23,15 +19,11 @@ export default function Homepage() {
         })
     },[])
 
-    
-    return(
-        <div>
-            <Navbar />
-            <div className={styles.containerhome}>
-                <div className={styles.banner}>
-                    <Banner />
-                </div>
-                {/* <DropdownBar/> */}
+
+    return ( 
+        <div className="">
+            <Navbar/>
+            <div className={styles.home}>
                 <div className="row">
                     {
                         movies.map(m=>
@@ -42,7 +34,9 @@ export default function Homepage() {
                             </div> )
                     }
                 </div>
-            </div>
+                </div>
         </div>
-    )
+     );
 }
+
+export default Moviepage;

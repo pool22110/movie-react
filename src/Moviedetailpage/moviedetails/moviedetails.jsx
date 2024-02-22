@@ -1,11 +1,12 @@
 
 
-import Navbar from '../../componants/Navbar/navbar'
+import Navbar from "../../componants/Navbar/Menubar";
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Moviedetailpanel from '../moviedetailpanel/moviedetailpanel';
 import { Button } from 'primereact/button';
+import styles from './moviedetails.module.css'
 
 export default function Moviedetails() {
   const {id} =useParams();
@@ -60,7 +61,7 @@ export default function Moviedetails() {
     <div>
       <Navbar/>
       <center>
-      <div className="container-sm details">
+      <div className={styles.container}>
         {movie.map((movie) => (
           <div key={movie.id}>
             <img  className="img" src={movie.image} alt="" width={300} height={300} />

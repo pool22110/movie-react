@@ -44,7 +44,7 @@ const Login = () => {
         }, (error) => {
 
             setRequestedResponse({
-                textMessage : 'error.response.data.message',
+                textMessage : 'Invalid Credes.!!',
                 alertClass: 'alert alert-danger',
             })
 
@@ -80,7 +80,7 @@ const Login = () => {
               {requestedResponse.textMessage}
             </div>
 
-            <h2 className='welcomeText'>SignIn</h2>
+            <h2 className='welcomeText'>Sign In</h2>
 
             <hr />
             <form onSubmit={formik.handleSubmit}>

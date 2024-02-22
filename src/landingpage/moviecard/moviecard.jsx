@@ -6,10 +6,9 @@ import { Rating } from "primereact/rating"
 import { Button } from 'primereact/button';
 
 export default function MovieCard({movie}) {
-    const rate = 4
     const header = (
         <img alt={movie.title} src={movie.image} width={200}
-        height={600} />
+        height={400} />
     );
     // const footer = (
     //     <div className="flex flex-wrap justify-content-end gap-2">

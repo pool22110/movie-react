@@ -2,8 +2,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import Navbar from '../componants/Navbar/navbar'
-import styles from './Theater.module.css'
+import  './Theater.css'
+import Navbar from '../componants/Navbar/Menubar'
+import { Button } from 'primereact/button'
 
 export default function TheaterSelect() {
     const [theaters,settheater] = useState([])
@@ -24,7 +25,7 @@ export default function TheaterSelect() {
     <div>
       <Navbar/>
       <center>
-      <div className="">
+      <div className='box'>
         <table>
           <thead>
             <tr>
@@ -38,13 +39,14 @@ export default function TheaterSelect() {
           <tbody>
             {theaters.map((theater) => (
               <tr key={theater.id}>
+                {/* <td>{theater.id}</td> */} 
                 <td>{theater.name}</td>
                 <td>{theater.city}</td>
                 <td>{theater.movie_timing}</td>
                 <td>{theater.available_seats}</td>
                 <td>
-                  <Link to={{ pathname: `/booking/${theater.name}` }}>
-                    <button>Book Seats</button>
+                  <Link to={{ pathname: `/booking/${theater.name}/${theater.id}` }}>
+                    <Button className='boot-btn'>Book Seats</Button>
                   </Link>
                 </td>
               </tr>
