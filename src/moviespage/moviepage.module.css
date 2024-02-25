@@ -4,3 +4,7 @@
     padding: 0 140px;
 
 }
+.arrangement{
+    flex-direction: row;
+    flex-wrap: wrap;
+}

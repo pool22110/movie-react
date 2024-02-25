@@ -10,7 +10,6 @@ export function Banner() {
             </h1>
             <p>Select Movie Tickets in Advance</p>
             <p>Movies are mention below</p>
-
         </div>
     )
 }

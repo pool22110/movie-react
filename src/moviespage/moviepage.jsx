@@ -24,7 +24,7 @@ function Moviepage() {
         <div className="">
             <Navbar/>
             <div className={styles.home}>
-                <div className="row">
+                <div className='row'>
                     {
                         movies.map(m=>
                             <div key={m.id} className="col-md-3">
